@@ -1,3 +1,5 @@
+import roy.general.pkg.Node;
+
 /**************************************************************************
  * author : Shilpita Roy
  * date   : 1 April 2016
@@ -10,7 +12,7 @@ public class AddInsertLinkedList {
     public void insertHead(int new_data)
     {
         Node new_node = new Node(new_data);
-        new_node.next = head;
+        new_node.setNext(head);
         head = new_node;
     }
 
@@ -23,8 +25,8 @@ public class AddInsertLinkedList {
 	    }
 	 
 	    Node new_node = new Node(new_data);
-	    new_node.next = prev_node.next;
-	    prev_node.next = new_node;
+	    new_node.setNext(prev_node.getNext());
+	    prev_node.setNext(new_node);
 	}
 	public void append(int new_data)
 	{
@@ -36,12 +38,12 @@ public class AddInsertLinkedList {
 	        return;
 	    }
 	    
-	    new_node.next = null;
+	    new_node.setNext(null);
 	    Node last = head; 
-	    while (last.next != null)
-	        last = last.next;
+	    while (last.getNext() != null)
+	        last = last.getNext();
 	    
-	    last.next = new_node;
+	    last.setNext(new_node);
 	    return;
 	}
 
@@ -51,11 +53,11 @@ public class AddInsertLinkedList {
 		list.insertHead(5);
 		list.insertHead(1);
 		list.insertHead(8);
-		list.insertAfterNode(list.head.next, 2);
+		list.insertAfterNode(list.head.getNext(), 2);
 		  while (list.head != null)
 	        {
-	            System.out.print(list.head.data+" ");
-	            list.head = list.head.next;
+	            System.out.print(list.head.getData()+" ");
+	            list.head = list.head.getNext();
 	        }
 	}
 

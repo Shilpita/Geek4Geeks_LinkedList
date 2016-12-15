@@ -1,3 +1,4 @@
+import roy.general.pkg.Node;
 
 public class DeleteNode {
     static Node head;
@@ -11,12 +12,12 @@ public class DeleteNode {
 	        return;
 	    }
 	    
-	    new_node.next = null;
+	    new_node.setNext(null);
 	    Node last = head; 
-	    while (last.next != null)
-	        last = last.next;
+	    while (last.getNext() != null)
+	        last = last.getNext();
 	    
-	    last.next = new_node;
+	    last.setNext(new_node);
 	    return;
 	}
 	
@@ -25,8 +26,8 @@ public class DeleteNode {
 		Node linkedList = head;
 		while (linkedList != null)
 		{
-			System.out.print(linkedList.data+" ");
-			linkedList = linkedList.next;
+			System.out.print(linkedList.getData()+" ");
+			linkedList = linkedList.getNext();
 		}
 	}
 	
@@ -35,18 +36,18 @@ public class DeleteNode {
 		//Node current = head;
 		if(current == null) 
 				return null;
-		if(head.data == key){
-			head = head.next;
+		if(head.getData() == key){
+			head = head.getNext();
 			  return head;
 		}
-		else if(current.next == null)
+		else if(current.getNext() == null)
 			return current;
-		else if(current.next.data == key){
-			Node temp = current.next;
-			current.next = temp.next;
+		else if(current.getNext().getData() == key){
+			Node temp = current.getNext();
+			current.setNext(temp.getNext());
 		  return head;
 		}else
-			return deleteNode(key,current.next);
+			return deleteNode(key,current.getNext());
 	
 	}
 	

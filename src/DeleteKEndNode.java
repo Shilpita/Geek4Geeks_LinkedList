@@ -1,10 +1,11 @@
+import roy.general.pkg.Node;
 
 public class DeleteKEndNode {
 	static Node head;  // head of list
     public void insertHead(int new_data)
     {
         Node new_node = new Node(new_data);
-        new_node.next = head;
+        new_node.setNext(head);
         head = new_node;
     }
 	public void append(int new_data)
@@ -17,12 +18,12 @@ public class DeleteKEndNode {
 	        return;
 	    }
 	    
-	    new_node.next = null;
+	    new_node.setNext(null);
 	    Node last = head; 
-	    while (last.next != null)
-	        last = last.next;
+	    while (last.getNext() != null)
+	        last = last.getNext();
 	    
-	    last.next = new_node;
+	    last.setNext(new_node);
 	    return;
 	}
 	public void printList()
@@ -30,8 +31,8 @@ public class DeleteKEndNode {
 		Node linkedList = head;
 		while (linkedList != null)
 		{
-			System.out.print(linkedList.data+" ");
-			linkedList = linkedList.next;
+			System.out.print(linkedList.getData()+" ");
+			linkedList = linkedList.getNext();
 		}
 	}
 	
@@ -43,12 +44,12 @@ public class DeleteKEndNode {
 			return null;
 		
 		//recursively rotate rest of list
-		Node temp = reverseRecList(head.next);
+		Node temp = reverseRecList(head.getNext());
 		if(temp == null)
 			    return head;
 		else{
-				head.next.next = head;
-				head.next = null ;       
+				head.getNext().next = head;
+				head.setNext(null) ;       
 		}
 		
 		return temp;
@@ -57,18 +58,18 @@ public class DeleteKEndNode {
 	public static Node deleteNode(Node head , int k){
 		if(head  == null) 
 			return null;
-		if(head.next == null && k==1)
+		if(head.getNext() == null && k==1)
 			return null;
 		Node current = head;
 		int counter = 1;
-		while (current.next!= null){
+		while (current.getNext()!= null){
 			if(counter == k-1){
-				Node temp = current.next;
-				current.next = temp.next;
+				Node temp = current.getNext();
+				current.setNext(temp.getNext());
 				return head;
 			}else{
 				counter++;
-				current = current.next;
+				current = current.getNext();
 			}
 		}
 		return head;

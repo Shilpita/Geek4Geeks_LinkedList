@@ -1,3 +1,4 @@
+import roy.general.pkg.Node;
 
 public class ReverseLinkedList {
     static Node head;
@@ -11,12 +12,12 @@ public class ReverseLinkedList {
 	        return;
 	    }
 	    
-	    new_node.next = null;
+	    new_node.setNext(null);
 	    Node last = head; 
-	    while (last.next != null)
-	        last = last.next;
+	    while (last.getNext() != null)
+	        last = last.getNext();
 	    
-	    last.next = new_node;
+	    last.setNext(new_node);
 	    return;
 	}
 	
@@ -25,8 +26,8 @@ public class ReverseLinkedList {
 		Node linkedList = head;
 		while (linkedList != null)
 		{
-			System.out.print(linkedList.data+" ");
-			linkedList = linkedList.next;
+			System.out.print(linkedList.getData()+" ");
+			linkedList = linkedList.getNext();
 		}
 	}
 	// iterative method
@@ -37,8 +38,8 @@ public class ReverseLinkedList {
 		
 		
 		while(current != null){
-			next = current.next;
-			current.next = prev;
+			next = current.getNext();
+			current.setNext(prev);
 			prev = current ;
 			current = next ;
 		}
@@ -53,12 +54,12 @@ public class ReverseLinkedList {
 			return null;
 		
 		//recursively rotate rest of list
-		Node temp = reverseRecList(head.next);
+		Node temp = reverseRecList(head.getNext());
 		if(temp == null)
 			    return head;
 		else{
-				head.next.next = head;
-				head.next = null ;       
+				head.getNext().next = head;
+				head.setNext(null) ;       
 		}
 		
 		return temp;

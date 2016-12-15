@@ -1,10 +1,11 @@
+import roy.general.pkg.Node;
 
 public class SwapNodes {
 	Node head;  // head of list
     public void insertHead(int new_data)
     {
         Node new_node = new Node(new_data);
-        new_node.next = head;
+        new_node.setNext(head);
         head = new_node;
     }
 	public void append(int new_data)
@@ -17,12 +18,12 @@ public class SwapNodes {
 	        return;
 	    }
 	    
-	    new_node.next = null;
+	    new_node.setNext(null);
 	    Node last = head; 
-	    while (last.next != null)
-	        last = last.next;
+	    while (last.getNext() != null)
+	        last = last.getNext();
 	    
-	    last.next = new_node;
+	    last.setNext(new_node);
 	    return;
 	}
 	
@@ -32,16 +33,16 @@ public class SwapNodes {
 			return;
         // find x
 		Node prevX = null , currX = head;
-		while(currX != null && currX.data != x){
+		while(currX != null && currX.getData() != x){
 			prevX = currX ;
-			currX = currX.next ;
+			currX = currX.getNext() ;
 		}
 		
 		// find y
 		Node prevY = null , currY = head;
-		while(currY != null && currY.data != y){
+		while(currY != null && currY.getData() != y){
 			prevY = currY ;
-			currY = currY.next ;
+			currY = currY.getNext() ;
 		}
 		//System.out.println("\n swap" +currX.data + currY.data);
 		
@@ -50,18 +51,18 @@ public class SwapNodes {
 		
 		
 		if (prevX != null)
-			prevX.next = currY;
+			prevX.setNext(currY);
 		else 
 			head = currY;
 		
 		if (prevY != null)
-			prevY.next = currX;
+			prevY.setNext(currX);
 		else 
 			head = currX;
 
-        Node temp = currX.next;
-        currX.next = currY.next;
-        currY.next = temp;
+        Node temp = currX.getNext();
+        currX.setNext(currY.getNext());
+        currY.setNext(temp);
 	}
 	
 	
@@ -70,8 +71,8 @@ public class SwapNodes {
 		Node tNode = head;
 		while (tNode != null)
 		{
-			System.out.print(tNode.data+" ");
-			tNode = tNode.next;
+			System.out.print(tNode.getData()+" ");
+			tNode = tNode.getNext();
 		}
 	}
 	
