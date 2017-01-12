@@ -37,7 +37,7 @@ package roy.general.pkg;
 			Node n = head;
 			System.out.println();
 			while(n!= null){
-				System.out.println(n.getData() +"\t");
+				System.out.print(n.getData() +"\t");
 				n = n.next;
 			}
 		}

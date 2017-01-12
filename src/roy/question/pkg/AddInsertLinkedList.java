@@ -1,9 +1,11 @@
+package roy.question.pkg;
 import roy.general.pkg.Node;
 
 /**************************************************************************
  * author : Shilpita Roy
  * date   : 1 April 2016
  * purpose: Add Insert Delete from Linked List
+ * 			Geek4Geeks
  * *****************************************************************************/
 public class AddInsertLinkedList {
     Node head;  // head of list
@@ -28,6 +30,7 @@ public class AddInsertLinkedList {
 	    new_node.setNext(prev_node.getNext());
 	    prev_node.setNext(new_node);
 	}
+	
 	public void append(int new_data)
 	{
 	    
@@ -53,7 +56,7 @@ public class AddInsertLinkedList {
 		list.insertHead(5);
 		list.insertHead(1);
 		list.insertHead(8);
-		list.insertAfterNode(list.head.getNext(), 2);
+		list.insertAfterNode(list.head.getNext(), 9);
 		  while (list.head != null)
 	        {
 	            System.out.print(list.head.getData()+" ");

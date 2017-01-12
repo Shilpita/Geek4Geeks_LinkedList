@@ -1,5 +1,11 @@
+package roy.question.pkg;
 import roy.general.pkg.Node;
-
+/**************************************************************************
+ * author : Shilpita Roy
+ * date   : Jan5,2016
+ * purpose: Delete Node from Linked List
+ * 			Geek4Geeks
+ * *****************************************************************************/
 public class DeleteNode {
     static Node head;
 	public void append(int new_data)

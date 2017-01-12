@@ -1,5 +1,11 @@
+package roy.question.pkg;
 import roy.general.pkg.Node;
-
+/**************************************************************************
+ * author : Shilpita Roy
+ * date   : April5,2016
+ * purpose: Swap Node without swapping data from Linked List
+ * 			Geek4Geeks
+ * *****************************************************************************/
 public class SwapNodes {
 	Node head;  // head of list
     public void insertHead(int new_data)

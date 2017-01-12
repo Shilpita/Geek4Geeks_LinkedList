@@ -1,5 +1,11 @@
+package roy.question.pkg;
 import roy.general.pkg.Node;
-
+/**************************************************************************
+ * author : Shilpita Roy
+ * date   : April5,2016
+ * purpose: Reverse Linked List
+ * 			Geek4Geeks
+ * *****************************************************************************/
 public class ReverseLinkedList {
     static Node head;
 	public void append(int new_data)

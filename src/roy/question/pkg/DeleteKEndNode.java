@@ -1,5 +1,11 @@
+package roy.question.pkg;
 import roy.general.pkg.Node;
-
+/**************************************************************************
+ * author : Shilpita Roy
+ * date   : 1 April 2016
+ * purpose: Delete Kth end Node from Linked List
+ * 			Geek4Geeks
+ * *****************************************************************************/
 public class DeleteKEndNode {
 	static Node head;  // head of list
     public void insertHead(int new_data)
