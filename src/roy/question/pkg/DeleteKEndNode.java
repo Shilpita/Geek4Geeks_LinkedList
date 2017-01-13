@@ -14,6 +14,7 @@ public class DeleteKEndNode {
         new_node.setNext(head);
         head = new_node;
     }
+    
 	public void append(int new_data)
 	{
 	    
@@ -88,10 +89,10 @@ public class DeleteKEndNode {
 		list.insertHead(1);
 		list.append(2);
 		list.append(5);
-		//list.append(1);
-	//	list.append(8);
+		list.append(1);
+		list.append(8);
 		//list.append(2);
-		//list.append(4);
+		list.append(4);
 		list.printList();
 		head = list.reverseRecList(head);
 		System.out.println("\n");
