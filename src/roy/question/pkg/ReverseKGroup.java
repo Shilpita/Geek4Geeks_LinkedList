@@ -20,6 +20,17 @@ public class ReverseKGroup {
 		Node next = null;
 		Node curr = head;
 		
+        int length =0;
+        while(curr!= null){
+            curr = curr.next;
+            length++;
+        }
+        curr = head;
+        
+        if(k > length)
+           return head;
+         
+		
 		int count =0;
 		while(curr!= null && count < k){
 			next = curr.next;
