@@ -20,6 +20,10 @@ public class ReverseKGroup {
 		Node next = null;
 		Node curr = head;
 		
+		
+		/**
+		 * CHECK IF THE LENGTH OF LIST IS LESS THAN INPUT K
+		 */
         int length =0;
         while(curr!= null){
             curr = curr.next;
@@ -30,7 +34,9 @@ public class ReverseKGroup {
         if(k > length)
            return head;
          
-		
+		/**
+		 * REVERSE THE LIST IN GROUP OF K WITH MARKING EACH NEXT GROUP OF K NODES
+		 */
 		int count =0;
 		while(curr!= null && count < k){
 			next = curr.next;
@@ -39,7 +45,10 @@ public class ReverseKGroup {
 			curr = next;
 			count++;
 		}
-		
+
+		/**
+		 * REVERSE THE NEXT K GROUPS AND MERGE WITH THE PREVIOUS HEAD
+		 */
 		if(next!= null){
 			System.out.println("\nhead:"+head.getData());
 			head.next = reverseK(next,k);
@@ -48,6 +57,20 @@ public class ReverseKGroup {
 		return prev;
 	}
 	
+//	public static Node reverse(Node head , int k){
+//		Node curr = head;
+//		Node next = null;
+//		Node prev = null;
+//		int count =0;
+//		while(curr!= null && count < k){
+//			next = curr.next;
+//			curr.next = prev;
+//			prev = curr;
+//			curr = next;
+//			count++;
+//		}
+//		return next;
+//	}
 
 	public static void main(String[] args) {
 		head = new Node(16);

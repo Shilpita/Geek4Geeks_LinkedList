@@ -26,11 +26,11 @@ public class ReverseAltKGroup {
             length++;
         }
         curr = head;
-        
+       /* 
         if(k > length)
            return head;
          
-		
+		*/
 		int count =0;
 		while(curr!= null && count < k){
 			next = curr.next;
@@ -71,6 +71,8 @@ public class ReverseAltKGroup {
 		c.next = d;
 		d.next = e;
 		e.next = new Node(41);
+		e.next.next = new Node(42);
+	//	e.next.next.next = new Node(43);
 		head.printList(head);
 
 		Node result = reverseK(head,3);
