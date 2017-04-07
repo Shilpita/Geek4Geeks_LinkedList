@@ -29,7 +29,7 @@ package roy.general.pkg;
 			return data;
 		}
 
-		protected void setData(int data) {
+		public void setData(int data) {
 			this.data = data;
 		}
 		
